@@ -39,6 +39,19 @@
         <div class="level-orb" aria-label="Livello attuale"><span>Livello</span><strong id="levelValue">1</strong></div>
       </div>
 
+      <section class="panel" aria-label="Versione e contenuti disponibili">
+        <div class="panel-heading">
+          <div><p class="eyebrow">Release corrente</p><h3>Versione 2026.08.11.1</h3></div>
+          <span class="status-pill">11/08/2026</span>
+        </div>
+        <div class="stats-grid">
+          <article class="stat"><span>🧩 Quiz/Test</span><strong>227</strong><small>quesiti caricati</small></article>
+          <article class="stat"><span>📚 Schede</span><strong>12</strong><small>moduli di studio</small></article>
+          <article class="stat"><span>🏛️ Storici</span><strong>14</strong><small>quesiti adattati 2025</small></article>
+          <article class="stat"><span>🖧 Reti+OS</span><strong>160+</strong><small>quesiti mirati</small></article>
+        </div>
+      </section>
+
       <div class="stats-grid" aria-label="Statistiche">
         <article class="stat"><span>🔥 Serie</span><strong id="streakValue">0</strong><small>giorni</small></article>
         <article class="stat"><span>✨ XP</span><strong id="xpValue">0</strong><small>totali</small></article>
@@ -133,6 +146,10 @@
   </nav>
 
   <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <script src="./data/questions-reti-extra.js"></script>
+  <script src="./data/questions-linux-extra.js"></script>
+  <script src="./data/questions-windows-extra.js"></script>
+  <script src="./data/extra-loader.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
