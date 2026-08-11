@@ -1,0 +1,53 @@
+(()=>{'use strict';
+const topic='Sistemi operativi',prefix='scr-linuxx';
+const rows=[
+['Filesystem','Quale directory Linux contiene normalmente file di configurazione di sistema?','/etc','/etc ospita configurazioni di sistema e dei servizi.',1,['linux','filesystem']],
+['Filesystem','Quale directory contiene normalmente i log di sistema?','/var/log','/var/log raccoglie i log prodotti dal sistema e da molti servizi.',1,['linux','log']],
+['Filesystem','A cosa serve principalmente /home?','Contiene le home directory degli utenti','Le directory personali degli utenti normali sono normalmente sotto /home.',1,['linux','filesystem']],
+['Filesystem','Quale comando mostra il filesystem e lo spazio disco utilizzato?','df -h','df mostra l’uso dei filesystem; -h usa unità leggibili.',1,['linux','disk']],
+['Filesystem','Quale comando stima lo spazio occupato da una directory?','du -sh directory','du calcola l’uso disco; -s riepiloga e -h rende leggibili le dimensioni.',1,['linux','disk']],
+['File','Quale comando copia un file?','cp','cp copia file e directory con le opzioni appropriate.',1,['linux','cp']],
+['File','Quale comando sposta o rinomina un file?','mv','mv sposta o rinomina file e directory.',1,['linux','mv']],
+['File','Quale comando rimuove una directory vuota?','rmdir','rmdir elimina directory solo se vuote.',1,['linux','filesystem']],
+['File','Quale comando trova file per nome in una gerarchia?','find','find ricerca file e directory secondo criteri come nome, tipo, data e permessi.',1,['linux','find']],
+['Testo','Quale comando cerca righe che corrispondono a un pattern testuale?','grep','grep filtra testo in base a pattern o espressioni regolari.',1,['linux','grep']],
+['Testo','Quale comando mostra le prime righe di un file?','head','head visualizza per default le prime 10 righe.',1,['linux','head']],
+['Testo','Quale comando mostra le ultime righe di un file e può seguirne la crescita?','tail -f','tail -f resta in ascolto e mostra le nuove righe aggiunte.',1,['linux','tail','log']],
+['Permessi','Cosa indica il permesso r su un file?','Lettura','r consente di leggere il contenuto del file.',1,['linux','permissions']],
+['Permessi','Cosa indica il permesso x su una directory?','Attraversamento/accesso alla directory','Su una directory x permette di attraversarla e accedere alle entry note.',2,['linux','permissions']],
+['Permessi','Che cosa significa chmod 750 su una directory?','Proprietario rwx, gruppo r-x, altri nessun permesso','7=rwx, 5=r-x, 0=---.',2,['linux','chmod']],
+['Permessi','Quale comando cambia proprietario e gruppo di un file?','chown','chown modifica ownership, eventualmente anche il gruppo.',1,['linux','chown']],
+['Permessi','Quale comando cambia il gruppo associato a un file?','chgrp','chgrp modifica il gruppo proprietario.',1,['linux','chgrp']],
+['Utenti','Quale file elenca gli account locali e i relativi UID?','/etc/passwd','/etc/passwd contiene informazioni pubbliche sugli account locali.',1,['linux','users']],
+['Utenti','Dove sono memorizzati normalmente gli hash delle password locali?','/etc/shadow','/etc/shadow è leggibile solo da processi privilegiati e contiene gli hash.',2,['linux','security']],
+['Utenti','Quale comando mostra UID, GID e gruppi di un utente?','id','id visualizza identità numerica e membership dei gruppi.',1,['linux','users']],
+['Utenti','Quale comando permette di eseguire un comando con privilegi elevati secondo policy?','sudo','sudo applica regole autorizzative definite tipicamente in sudoers.',1,['linux','sudo']],
+['Processi','Quale comando elenca i processi in formato snapshot?','ps','ps mostra una fotografia dei processi correnti.',1,['linux','processes']],
+['Processi','Quale segnale chiede normalmente a un processo di terminare in modo ordinato?','SIGTERM','SIGTERM permette al processo di intercettare il segnale e fare cleanup.',2,['linux','signals']],
+['Processi','Quale segnale termina forzatamente un processo senza possibilità di gestione?','SIGKILL','SIGKILL non può essere intercettato o ignorato.',2,['linux','signals']],
+['Processi','Che cosa rappresenta il PID?','Identificatore numerico di un processo','Ogni processo ha un Process ID usato dal kernel e dagli strumenti di gestione.',1,['linux','pid']],
+['Systemd','Quale comando avvia un servizio systemd?','systemctl start nome-servizio','start avvia l’unità nel sistema corrente.',1,['linux','systemd']],
+['Systemd','Quale comando abilita un servizio all’avvio?','systemctl enable nome-servizio','enable crea i collegamenti necessari per l’avvio automatico.',1,['linux','systemd']],
+['Systemd','Quale comando riavvia un servizio systemd?','systemctl restart nome-servizio','restart arresta e riavvia l’unità.',1,['linux','systemd']],
+['Systemd','Quale comando verifica se un servizio è attivo?','systemctl is-active nome-servizio','is-active restituisce lo stato operativo sintetico.',1,['linux','systemd']],
+['Log','Quale comando consulta il journal di systemd?','journalctl','journalctl interroga il journal gestito da systemd-journald.',1,['linux','journalctl']],
+['Log','Come si visualizzano i log di una specifica unità systemd?','journalctl -u nome-servizio','-u filtra per unità.',2,['linux','journalctl']],
+['Rete','Quale comando moderno mostra indirizzi IP e interfacce?','ip addr','ip addr sostituisce in gran parte il vecchio ifconfig.',1,['linux','network']],
+['Rete','Quale comando mostra la tabella di routing IP?','ip route','ip route visualizza e gestisce le route del kernel.',1,['linux','routing']],
+['Rete','Quale comando mostra socket e porte in ascolto?','ss -lntup','ss mostra socket; le opzioni selezionano listen, TCP/UDP e processi.',2,['linux','network','ports']],
+['Rete','Quale file contiene tradizionalmente associazioni statiche nome-IP locali?','/etc/hosts','/etc/hosts permette risoluzioni statiche locali prima o insieme al DNS secondo nsswitch.',1,['linux','dns']],
+['Rete','Quale comando verifica la raggiungibilità ICMP di un host?','ping','ping invia ICMP Echo Request e misura le risposte.',1,['linux','ping']],
+['Rete','Quale comando è utile per interrogare record DNS?','dig','dig consente query DNS dettagliate.',1,['linux','dns']],
+['Archivi','Quale comando crea tipicamente un archivio tar.gz?','tar -czf archivio.tar.gz percorso','c crea, z usa gzip, f indica il file archivio.',2,['linux','tar']],
+['Archivi','Quale comando estrae un archivio tar.gz?','tar -xzf archivio.tar.gz','x estrae, z usa gzip, f indica il file.',2,['linux','tar']],
+['Shell','Che cosa fa il pipe | nella shell?','Collega stdout di un comando a stdin del successivo','La pipeline compone comandi passando flussi di testo.',1,['linux','shell']],
+['Shell','Che cosa fa > file nella shell?','Redirige stdout sovrascrivendo il file','> crea o tronca il file e vi scrive lo standard output.',1,['linux','redirection']],
+['Shell','Che cosa fa >> file?','Aggiunge stdout in coda al file','>> apre il file in append senza troncarlo.',1,['linux','redirection']],
+['Pacchetti','Su Debian/Ubuntu quale comando aggiorna l’indice dei pacchetti?','apt update','apt update scarica gli indici correnti dai repository configurati.',1,['linux','apt']],
+['Pacchetti','Su Debian/Ubuntu quale comando installa un pacchetto?','apt install nome-pacchetto','apt install risolve dipendenze e installa il pacchetto richiesto.',1,['linux','apt']],
+['Scheduling','Quale servizio/meccanismo viene usato tradizionalmente per attività pianificate ricorrenti?','cron','cron esegue comandi secondo pianificazioni definite nelle crontab.',1,['linux','cron']]
+];
+const generic=['Nessuna delle precedenti','Unicamente il riavvio del kernel','Solo la configurazione grafica'];
+window.CONCORSO_EXTRA_BANK=window.CONCORSO_EXTRA_BANK||[];
+rows.forEach((r,i)=>{let [sub,prompt,correct,explanation,difficulty,tags]=r;let candidates=rows.filter(x=>x[0]===sub&&x[2]!==correct).map(x=>x[2]);let options=[correct,...candidates,...generic].filter((x,j,a)=>a.indexOf(x)===j).slice(0,4);while(options.length<4)options.push(`Opzione non pertinente ${options.length}`);let rot=(i+sub.length)%4;options=options.slice(rot).concat(options.slice(0,rot));window.CONCORSO_EXTRA_BANK.push({id:`${prefix}-${String(i+1).padStart(3,'0')}`,stage:'scritta',topic,subtopic:sub,difficulty,prompt,options,answer:options.indexOf(correct),explanation,source:{kind:'bando-generated',year:2026,ref:'RT2026-art7'},tags});});
+})();
