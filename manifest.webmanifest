@@ -1,1 +1,14 @@
-{"name":"Concorso Quest RT","short_name":"Quest RT","description":"PWA gamificata per esercitazioni al concorso informatico Regione Toscana","start_url":"./","scope":"./","display":"standalone","background_color":"#f6f3f1","theme_color":"#8b1e3f","icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{
+  "name": "Concorso Quest RT",
+  "short_name": "Quest RT",
+  "description": "Allenamento gamificato per il concorso informatico di Regione Toscana",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f1eb",
+  "theme_color": "#8b1e3f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
