@@ -1,0 +1,53 @@
+(()=>{'use strict';
+const topic='Sistemi operativi',prefix='scr-winx';
+const rows=[
+['Servizi','Quale console MMC apre la gestione dei servizi Windows?','services.msc','services.msc consente avvio, arresto e configurazione dei servizi locali.',1,['windows','services']],
+['Servizi','Quale comando PowerShell elenca i servizi?','Get-Service','Get-Service restituisce i servizi locali e il loro stato.',1,['windows','powershell']],
+['Servizi','Quale comando PowerShell avvia un servizio?','Start-Service','Start-Service avvia il servizio indicato.',1,['windows','powershell']],
+['Servizi','Quale comando PowerShell arresta un servizio?','Stop-Service','Stop-Service arresta il servizio se l’utente dispone dei privilegi necessari.',1,['windows','powershell']],
+['Processi','Quale strumento grafico mostra processi e utilizzo delle risorse?','Task Manager','Task Manager permette di vedere processi, prestazioni e applicazioni in esecuzione.',1,['windows','task-manager']],
+['Processi','Quale comando PowerShell elenca i processi?','Get-Process','Get-Process restituisce informazioni sui processi correnti.',1,['windows','powershell']],
+['Eventi','Quale strumento centralizza i log di sistema, sicurezza e applicazioni?','Event Viewer','Event Viewer consente di consultare i registri eventi Windows.',1,['windows','event-viewer']],
+['Eventi','Quale log contiene tipicamente eventi relativi ai servizi e al kernel?','System','Il log System raccoglie eventi di componenti e servizi di sistema.',1,['windows','logs']],
+['Eventi','Quale log contiene gli eventi di auditing di sicurezza?','Security','Il log Security contiene eventi prodotti dalle policy di auditing.',1,['windows','security']],
+['Rete','Quale comando mostra la configurazione IP?','ipconfig','ipconfig visualizza indirizzi, gateway e altri dati di rete.',1,['windows','network']],
+['Rete','Quale opzione mostra dettagli completi della configurazione IP?','ipconfig /all','/all aggiunge DHCP, DNS, MAC e altri dettagli.',1,['windows','network']],
+['Rete','Quale comando svuota la cache DNS del client?','ipconfig /flushdns','/flushdns rimuove le entry DNS memorizzate localmente.',1,['windows','dns']],
+['Rete','Quale comando interroga il DNS da prompt?','nslookup','nslookup permette query DNS verso il resolver configurato o specificato.',1,['windows','dns']],
+['Rete','Quale comando verifica la raggiungibilità ICMP?','ping','ping invia Echo Request ICMP verso la destinazione.',1,['windows','ping']],
+['Rete','Quale comando mostra i salti verso una destinazione?','tracert','tracert usa TTL progressivi per individuare i router attraversati.',1,['windows','tracert']],
+['Rete','Quale comando mostra connessioni e porte in ascolto?','netstat -ano','-a mostra connessioni/listen, -n indirizzi numerici, -o PID.',2,['windows','netstat']],
+['Rete','Quale cmdlet PowerShell è utile per testare una porta TCP remota?','Test-NetConnection','Test-NetConnection verifica connettività e può testare una specifica porta TCP.',2,['windows','powershell','network']],
+['Rete','Quale comando mostra la tabella di routing?','route print','route print visualizza route IPv4/IPv6 e interfacce.',1,['windows','routing']],
+['File system','Quale filesystem è standard sui volumi di sistema Windows moderni?','NTFS','NTFS supporta ACL, journaling, compressione e altre funzioni avanzate.',1,['windows','ntfs']],
+['File system','Quale utilità verifica la coerenza di un filesystem Windows?','chkdsk','chkdsk analizza volumi e, con opzioni appropriate, corregge errori.',1,['windows','disk']],
+['File system','Quale comando mostra i volumi e le relative informazioni in PowerShell?','Get-Volume','Get-Volume mostra filesystem, lettere, dimensioni e stato dei volumi.',2,['windows','powershell','disk']],
+['File system','Che cosa sono le ACL NTFS?','Liste di controllo accessi su file e cartelle','Le ACL definiscono chi può leggere, modificare o eseguire risorse NTFS.',2,['windows','acl']],
+['Utenti','Quale console MMC gestisce utenti e gruppi locali?','lusrmgr.msc','Local Users and Groups gestisce account e gruppi locali sulle edizioni supportate.',1,['windows','users']],
+['Utenti','Quale comando mostra l’identità dell’utente corrente?','whoami','whoami restituisce dominio/computer e nome utente corrente.',1,['windows','users']],
+['Utenti','Quale comando mostra i gruppi e privilegi del token corrente?','whoami /all','/all mostra SID, gruppi, privilegi e altre informazioni del token.',2,['windows','security']],
+['Dominio','Che cosa fa un Domain Controller in Active Directory?','Fornisce autenticazione e servizi di directory per il dominio','Il DC ospita AD DS e autentica utenti/computer del dominio.',1,['windows','active-directory']],
+['Dominio','Quale servizio è strettamente integrato con Active Directory per localizzare i controller di dominio?','DNS','AD usa record DNS, inclusi SRV, per individuare servizi e DC.',2,['windows','active-directory','dns']],
+['Dominio','Quale protocollo è usato principalmente da Active Directory per l’autenticazione moderna di dominio?','Kerberos','Kerberos è il protocollo di autenticazione predefinito nei domini AD moderni.',2,['windows','kerberos']],
+['Dominio','Che cosa permette una Group Policy?','Applicare configurazioni centralizzate a utenti e computer','Le GPO distribuiscono impostazioni e policy in un dominio Active Directory.',1,['windows','gpo']],
+['Dominio','Quale console gestisce le Group Policy di dominio?','gpmc.msc','Group Policy Management Console consente gestione e collegamento delle GPO.',2,['windows','gpo']],
+['Dominio','Quale comando aggiorna immediatamente le Group Policy?','gpupdate /force','gpupdate /force forza il riapplicarsi delle policy utente e computer.',1,['windows','gpo']],
+['Dominio','Quale comando mostra il risultato delle Group Policy applicate?','gpresult /r','gpresult riepiloga le GPO applicate e l’appartenenza ai gruppi.',2,['windows','gpo']],
+['PowerShell','Quale comando mostra la guida di un cmdlet?','Get-Help','Get-Help visualizza sintassi, parametri ed esempi disponibili.',1,['windows','powershell']],
+['PowerShell','Che cosa rappresenta la pipeline in PowerShell?','Passaggio di oggetti tra cmdlet','PowerShell passa oggetti .NET nella pipeline, non solo testo.',2,['windows','powershell']],
+['PowerShell','Quale cmdlet elenca i file di una directory?','Get-ChildItem','Get-ChildItem è l’equivalente PowerShell di dir/ls.',1,['windows','powershell']],
+['PowerShell','Quale cmdlet legge il contenuto di un file testuale?','Get-Content','Get-Content restituisce il contenuto del file come oggetti/stringhe.',1,['windows','powershell']],
+['Sistema','Quale utilità mostra informazioni generali sul sistema operativo e hardware?','systeminfo','systeminfo riporta versione OS, patch, memoria e altri dettagli.',1,['windows','systeminfo']],
+['Sistema','Quale console gestisce dispositivi hardware e driver?','devmgmt.msc','Device Manager consente gestione di dispositivi e driver.',1,['windows','device-manager']],
+['Sistema','Quale strumento gestisce i dischi e le partizioni in interfaccia grafica?','diskmgmt.msc','Disk Management gestisce volumi, partizioni e lettere di unità.',1,['windows','disk']],
+['Sistema','Quale utilità consente di verificare e riparare file di sistema protetti?','sfc /scannow','System File Checker confronta e ripristina file di sistema protetti.',2,['windows','sfc']],
+['Sistema','Quale strumento può riparare l’immagine Windows usata anche da SFC?','DISM','DISM gestisce e può riparare l’immagine component store di Windows.',2,['windows','dism']],
+['Firewall','Quale componente filtra traffico di rete in ingresso e uscita sul sistema Windows?','Windows Defender Firewall','Il firewall applica regole per profilo, programma, porta e direzione.',1,['windows','firewall']],
+['Firewall','Quale console avanzata gestisce le regole del firewall?','wf.msc','Windows Defender Firewall with Advanced Security è accessibile con wf.msc.',2,['windows','firewall']],
+['Remote','Quale protocollo usa normalmente Remote Desktop?','RDP','Remote Desktop Protocol è usato per sessioni grafiche remote Windows.',1,['windows','rdp']],
+['Remote','Quale porta TCP è tipicamente associata a RDP?','3389','RDP usa normalmente TCP 3389, salvo configurazioni differenti.',1,['windows','rdp','ports']]
+];
+const generic=['Nessuna delle precedenti','Soltanto un riavvio del BIOS','Unicamente una funzione del browser'];
+window.CONCORSO_EXTRA_BANK=window.CONCORSO_EXTRA_BANK||[];
+rows.forEach((r,i)=>{let [sub,prompt,correct,explanation,difficulty,tags]=r;let candidates=rows.filter(x=>x[0]===sub&&x[2]!==correct).map(x=>x[2]);let options=[correct,...candidates,...generic].filter((x,j,a)=>a.indexOf(x)===j).slice(0,4);while(options.length<4)options.push(`Opzione non pertinente ${options.length}`);let rot=(i*3+sub.length)%4;options=options.slice(rot).concat(options.slice(0,rot));window.CONCORSO_EXTRA_BANK.push({id:`${prefix}-${String(i+1).padStart(3,'0')}`,stage:'scritta',topic,subtopic:sub,difficulty,prompt,options,answer:options.indexOf(correct),explanation,source:{kind:'bando-generated',year:2026,ref:'RT2026-art7'},tags});});
+})();
