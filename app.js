@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const BUILD=window.CONCORSO_BUILD||{version:'2026.08.12.4',date:'12/08/2026',cache:'v9'};
+const BUILD=window.CONCORSO_BUILD||{version:'2026.08.12.5',date:'12/08/2026',cache:'v10'};
 const VERSION=BUILD.version,RELEASE_DATE=BUILD.date;
 const UNVERIFIED_HISTORY=new Set(['pre-eng-006','hist-2025-git-002','hist-2025-uml-001','hist-2025-db-005']);
 function safeProvenance(q){if(!q||!UNVERIFIED_HISTORY.has(q.id))return q;return {...q,source:{kind:'bando-generated',year:2026,ref:'RT2026-art7'},tags:Array.isArray(q.tags)?q.tags.filter(t=>t!=='historical'):[]}}
@@ -58,6 +58,7 @@ async function updateRelease(fetchBase){
     return fetchBase(input,init);
   };
   await loadScript('./app-v2.js');
+  await loadScript('./data/runtime-option-shuffle.js');
   await loadScript('./data/oral-evaluator.js');
   await loadScript('./data/written-lab.js');
   const oralBtn=document.querySelector('[data-action="oral"]');if(oralBtn&&window.CONCORSO_ORAL_ARENA)oralBtn.onclick=window.CONCORSO_ORAL_ARENA.start;
