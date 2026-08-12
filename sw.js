@@ -1,7 +1,7 @@
-const CACHE='concorso-quest-rt-v10';
+const CACHE='concorso-quest-rt-v11';
 const CORE=[
-  './','./index.html','./styles.css','./app.js','./app-v2.js','./manifest.webmanifest','./icon.svg','./data/build-info.js',
-  './data/questions-preselettiva.json','./data/questions-scritta.json','./data/questions-orale.json','./data/questions-storiche.json','./data/study-modules.json',
+  './','./index.html','./styles.css','./archive.css','./app.js','./app-v2.js','./manifest.webmanifest','./icon.svg','./data/build-info.js',
+  './data/questions-preselettiva.json','./data/questions-scritta.json','./data/questions-orale.json','./data/questions-storiche.json','./data/study-modules.json','./data/exam-archive.json','./data/exam-archive.js',
   './data/questions-reti-extra.js','./data/questions-linux-extra.js','./data/questions-windows-extra.js',
   './data/questions-programmazione-extra.js','./data/questions-webapi-extra.js','./data/questions-database-extra.js',
   './data/questions-pa-digitale-extra.js','./data/questions-casi-pratici-extra.js','./data/questions-infra-storage-extra.js','./data/questions-project-english-ai-extra.js',

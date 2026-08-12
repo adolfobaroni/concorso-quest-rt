@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-08-12",
+  "scope": "Regione Toscana - profili informatici, categorie C/D e profilo Funzionari successivo al superamento delle categorie",
+  "sessions": [
+    {
+      "id": "rt-2025-funz-sit",
+      "year": 2025,
+      "category": "FUNZIONARI",
+      "categoryLabel": "Area Funzionari",
+      "profile": "Funzionario sistemi informativi e tecnologie",
+      "places": 2,
+      "writtenDate": "06/03/2025",
+      "note": "Profilo dell'Area dei Funzionari e dell'Elevata Qualificazione; incluso perché è il riferimento più recente e direttamente affine ai precedenti concorsi di categoria D.",
+      "sourcePage": "https://www.regione.toscana.it/-/concorso-per-l-assunzione-di-2-unit%C3%A0-di-funzionario-sistemi-informativi-e-tecnologie-",
+      "tests": [
+        {
+          "number": 1,
+          "status": "non estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/23814707/busta_1_domande%2Bconcorso.pdf/330d45df-a801-13b2-bf7d-939fbc99440a?t=1741694664331",
+          "correctorUrl": "https://www.regione.toscana.it/documents/10180/23814707/busta_1_risposte_corrette%2B%281%29.pdf/479bbd6a-0e84-7b93-3544-e5e67dd7f8e3?t=1742394342292"
+        },
+        {
+          "number": 2,
+          "status": "estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/23814707/busta_2_domande%2Bconcorso.pdf/74dda0ae-7c43-927f-4810-ff6ef91c31a6?t=1741694699402",
+          "correctorUrl": "https://www.regione.toscana.it/documents/10180/23814707/busta_2_risposte_corrette%2B%281%29.pdf/a925c599-c57e-4135-c2fe-53667caa2533?t=1742394385572"
+        },
+        {
+          "number": 3,
+          "status": "non estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/23814707/busta_3_domande%2Bconcorso.pdf/ffd9ca62-f3a6-f736-709b-6ba44846768c?t=1741694718463",
+          "correctorUrl": "https://www.regione.toscana.it/documents/10180/23814707/busta_3_risposte_corrette%2B%281%29.pdf/f01ceef5-d70a-82ae-8c94-33148ad9ae33?t=1742394438000"
+        }
+      ]
+    },
+    {
+      "id": "rt-2023-d-sit",
+      "year": 2023,
+      "category": "D",
+      "categoryLabel": "Categoria D",
+      "profile": "Funzionario sistemi informativi e tecnologie",
+      "places": 2,
+      "writtenDate": "30/05/2023",
+      "note": "La Regione Toscana pubblicò tutte e tre le tracce; la prova n. 3 fu quella estratta.",
+      "sourcePage": "https://www.regione.toscana.it/-/concorso-per-due-unita-di-categoria-d-funzionario-sistemi-informativi-e-tecnologie-",
+      "tests": [
+        {
+          "number": 1,
+          "status": "non estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/0/PROVA_N._1_-_NON_ESTRATTA%5B1%5D%2B%281%29.pdf/ba2ce535-56cc-8f6d-fe47-c5168a7fe32b?t=1685971457637"
+        },
+        {
+          "number": 2,
+          "status": "non estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/0/PROVA_N._2_-_NON_ESTRATTA%5B1%5D.pdf/732fcb71-c8d7-89ff-2cd6-ed0ff8e22d26?t=1685971475198"
+        },
+        {
+          "number": 3,
+          "status": "estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/0/PROVA_N._3_-_ESTRATTA%5B1%5D.pdf/f4d90025-2c98-bb65-84cd-31e80611798c?t=1685971424215"
+        }
+      ]
+    },
+    {
+      "id": "rt-2023-c-assistente",
+      "year": 2023,
+      "category": "C",
+      "categoryLabel": "Categoria C",
+      "profile": "Assistente sistemi informativi e tecnologie - Gestione e sviluppo sistemi informativi",
+      "places": 2,
+      "writtenDate": "22/02/2023",
+      "note": "La Regione Toscana pubblicò tutte e tre le tracce; la prova n. 3 fu quella estratta.",
+      "sourcePage": "https://www.regione.toscana.it/-/concorso-per-due-unit%C3%A0-di-categoria-c-assistente-gestione-e-sviluppo-sistemi-informativi-1",
+      "tests": [
+        {
+          "number": 1,
+          "status": "non estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/0/C_INF_-_scansione_PROVA_1%5B1%5D.pdf/29e0689e-f516-fb26-31f1-522da578547c?t=1677572604820"
+        },
+        {
+          "number": 2,
+          "status": "non estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/0/C_INF_-_scansione_PROVA_2%5B1%5D.pdf/697693b1-d3e5-02a4-3bce-3cad041e2e46?t=1677572627759"
+        },
+        {
+          "number": 3,
+          "status": "estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/0/C_INF_-_scansione_PROVA_3_estratta%5B1%5D.pdf/905543bd-ce41-bb8a-cf5c-689b2d62f943?t=1677572578542"
+        }
+      ]
+    },
+    {
+      "id": "rt-2019-d-sit",
+      "year": 2019,
+      "category": "D",
+      "categoryLabel": "Categoria D",
+      "profile": "Funzionario sistemi informativi e tecnologie",
+      "places": 11,
+      "writtenDate": "prova scritta 2020",
+      "note": "Bando 2019. La pagina ufficiale conserva le tre tracce della prova scritta; la prova n. 3 fu quella estratta.",
+      "sourcePage": "https://www.regione.toscana.it/-/concorso-per-esami-per-11-unit%C3%A0-d-funzionario-sistemi-informativi-e-tecnologie-",
+      "tests": [
+        {
+          "number": 1,
+          "status": "non estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/23814707/Prova%2Bn.1_NON%2BESTRATTA.pdf/3d2b3196-77db-ce7f-40a9-650cccc3b0a8?t=1582899734439"
+        },
+        {
+          "number": 2,
+          "status": "non estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/23814707/Prova%2Bn.2_NON%2BESTRATTA.pdf/4fbbcc58-3af2-b713-6c07-c6f0c478fdbd?t=1582899750592"
+        },
+        {
+          "number": 3,
+          "status": "estratta",
+          "url": "https://www.regione.toscana.it/documents/10180/23814707/Prova%2Bn.3_%2BESTRATTA.pdf/10471aab-5d91-7223-6055-91411fc2de88?t=1582899769422"
+        }
+      ]
+    }
+  ]
+}
