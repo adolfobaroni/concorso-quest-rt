@@ -10,10 +10,9 @@ async function updateRelease(fetchBase){
       fetchBase('data/questions-storiche.json',{cache:'no-cache'}).then(r=>r.json()),
       fetchBase('data/study-modules.json',{cache:'no-cache'}).then(r=>r.json())
     ]);
-    const writtenExtra=Array.isArray(window.CONCORSO_EXTRA_BANK)?window.CONCORSO_EXTRA_BANK:[];
     const oralExtra=Array.isArray(window.CONCORSO_ORAL_EXTRA_BANK)?window.CONCORSO_ORAL_EXTRA_BANK:[];
     const studyExtra=Array.isArray(window.CONCORSO_ORAL_STUDY)?window.CONCORSO_ORAL_STUDY:[];
-    const all=[...pre,...wr,...writtenExtra,...oral,...oralExtra,...hist],counts={};all.forEach(q=>counts[q.topic]=(counts[q.topic]||0)+1);
+    const all=[...pre,...wr,...oral,...oralExtra,...hist],counts={};all.forEach(q=>counts[q.topic]=(counts[q.topic]||0)+1);
     const box=document.querySelector('section[aria-label="Versione e contenuti disponibili"]');if(!box)return;
     const h=box.querySelector('h3'),pill=box.querySelector('.status-pill'),stats=box.querySelectorAll('.stat strong');
     if(h)h.textContent=`Versione ${VERSION}`;if(pill)pill.textContent=RELEASE_DATE;
@@ -36,8 +35,8 @@ async function updateRelease(fetchBase){
     const url=typeof input==='string'?input:(input&&input.url)||'';
     if(url.endsWith('data/questions-scritta.json')){
       const [baseRes,histRes]=await Promise.all([fetchBase(input,init),fetchBase('data/questions-storiche.json',{...init,cache:'no-cache'})]);
-      if(!baseRes.ok)return baseRes;const base=await baseRes.json(),hist=histRes.ok?await histRes.json():[],extra=window.CONCORSO_EXTRA_BANK||[];
-      return new Response(JSON.stringify([...base,...hist,...extra]),{status:200,headers:{'Content-Type':'application/json; charset=utf-8'}});
+      if(!baseRes.ok)return baseRes;const base=await baseRes.json(),hist=histRes.ok?await histRes.json():[];
+      return new Response(JSON.stringify([...base,...hist]),{status:200,headers:{'Content-Type':'application/json; charset=utf-8'}});
     }
     if(url.endsWith('data/questions-orale.json')){
       const baseRes=await fetchBase(input,init);if(!baseRes.ok)return baseRes;const base=await baseRes.json(),extra=window.CONCORSO_ORAL_EXTRA_BANK||[];
