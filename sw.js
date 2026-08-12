@@ -1,9 +1,10 @@
-const CACHE='concorso-quest-rt-v5';
+const CACHE='concorso-quest-rt-v6';
 const CORE=[
   './','./index.html','./styles.css','./app.js','./app-v2.js','./manifest.webmanifest','./icon.svg',
   './data/questions-preselettiva.json','./data/questions-scritta.json','./data/questions-orale.json','./data/questions-storiche.json','./data/study-modules.json',
   './data/questions-reti-extra.js','./data/questions-linux-extra.js','./data/questions-windows-extra.js',
-  './data/questions-programmazione-extra.js','./data/questions-webapi-extra.js','./data/questions-database-extra.js','./data/extra-loader.js'
+  './data/questions-programmazione-extra.js','./data/questions-webapi-extra.js','./data/questions-database-extra.js',
+  './data/questions-orale-extra.js','./data/oral-bank-normalizer.js','./data/study-orale-extra.js','./data/extra-loader.js'
 ];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
