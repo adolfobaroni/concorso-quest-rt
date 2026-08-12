@@ -17,8 +17,6 @@ function bindOralEvaluator(){
   const btn=document.querySelector('[data-action="oral"]');if(btn)btn.onclick=arena.start;
   document.querySelectorAll('[data-view-target="profile"]').forEach(b=>b.addEventListener('click',()=>setTimeout(arena.refreshProfile,0)));
   arena.refreshProfile();
-  const box=document.querySelector('section[aria-label="Versione e contenuti disponibili"]');
-  if(box){const h=box.querySelector('h3'),pill=box.querySelector('.status-pill');if(h)h.textContent='Versione 2026.08.12.2';if(pill)pill.textContent='12/08/2026'}
   return true;
 }
 window.addEventListener('load',()=>{
