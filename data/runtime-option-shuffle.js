@@ -5,8 +5,9 @@ function shuffleList(list){
   const buttons=[...list.querySelectorAll('button[data-answer]')];
   if(buttons.length<2)return;
   list.dataset.optionShuffle='1';
-  for(let i=buttons.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[buttons[i],buttons[j]]=[buttons[j],buttons[i]]}
-  buttons.forEach((b,i)=>{list.appendChild(b);const label=b.querySelector('strong');if(label)label.textContent=String.fromCharCode(65+i)});
+  const visual=[...buttons];
+  for(let i=visual.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[visual[i],visual[j]]=[visual[j],visual[i]]}
+  visual.forEach((b,i)=>{b.style.order=String(i);const label=b.querySelector('strong');if(label)label.textContent=String.fromCharCode(65+i)});
   runs++;
 }
 function scan(root=document){root.querySelectorAll?.('.answer-list').forEach(shuffleList)}
